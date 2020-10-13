@@ -39,7 +39,7 @@ export class TarefaService {
   }
 
   /**
-   * Retorna a tarefa dado um Id.
+   * Retorna a tarefa referente um Id.
    *
    * @param id number
    * @return tarefa Tarefa
@@ -66,7 +66,7 @@ export class TarefaService {
   }
 
   /**
-   * Remove a tarefa que tiver o id passado para o método.
+   * Remove a tarefa referente um id.
    *
    * @param id
    * @return void
@@ -77,6 +77,12 @@ export class TarefaService {
     localStorage['tarefas'] = JSON.stringify(tarefas);
   }
 
+  /**
+   * Altera o status da tarefa referente um id.
+   *
+   * @param id
+   * @return void
+   */
   alterarStatus(id: number): void {
     const tarefas: Tarefa[] = this.listarTodos();
     tarefas.forEach((obj, index, objs) => {
@@ -86,4 +92,5 @@ export class TarefaService {
     });
     localStorage['tarefas'] = JSON.stringify(tarefas);
   }
+
 }
